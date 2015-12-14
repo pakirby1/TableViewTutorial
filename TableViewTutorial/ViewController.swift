@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView : UITableView!
-    var items: [String] = ["This", "Is", "Swift"]
+    var items: [String] = ["San Francisco", "Los Angeles", "Chicago", "New York", "London", "Paris", "Tokyo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
