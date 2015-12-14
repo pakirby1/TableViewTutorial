@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView : UITableView!
-    var items: [String] = ["San Francisco", "Los Angeles", "Chicago", "New York", "London", "Paris", "Tokyo"]
+    var items: [String] = ["Long Term Goals", "Career", "Financial", "Individual", "Health", "Shopping", "Miscellaneous"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected cell #\(indexPath.row)!")
+        print("You selected cell #\(indexPath.row) : \(self.items[indexPath.row])")
     }
 }
 
