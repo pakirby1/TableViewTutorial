@@ -11,12 +11,12 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView : UITableView!
-    var items: [String] = ["Long Term Goals", "Career", "Financial", "Individual", "Health", "Shopping", "Miscellaneous"]
+    var items: [String] = ["Test"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        getData()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
@@ -40,6 +40,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You selected cell #\(indexPath.row) : \(self.items[indexPath.row])")
+    }
+    
+    func getData() {
+        let dataController : DataController
+        dataController = DataController()
+        
+        let compass = dataController.getData()
+        
+        for item in compass.store {
+            items.append(item.description)
+        }
     }
 }
 
